@@ -1,0 +1,7 @@
+<h1>List Books</h1>
+<br/>
+<ul>
+<% _.each(books, function(book){%>
+<li><%= book.attributes.nombre%> - <%= book.attributes.autor%></li>
+<%});%>
+</ul>
