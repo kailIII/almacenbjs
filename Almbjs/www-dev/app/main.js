@@ -10,7 +10,9 @@ requirejs.config({
         "BookModel" : "models/BookModel",
         //Collections
         "BookCollection" : "collections/BookCollection",
+        "BookCollectionRest" : "collections/BookCollectionRest",
         //Views
+        "AddBookView" : "views/AddBookView",
         "HomeView" : "views/HomeView",
         "ListBooksView" : "views/ListBooksView"
     },

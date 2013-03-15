@@ -1,8 +1,11 @@
-define([ "underscore", "Backbone", "jquery", "BookCollection", "text!templates/listBooksTemplate.html" ], 
+define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templates/listBooksTemplate.html" ], 
 		function(_, Backbone, $, BookCollection, listBooksTemplate) {
 	var HomeView = Backbone.View.extend({
 		el : $("#content"),
 		template : _.template(listBooksTemplate),
+		events: {
+			"click #addBook" : "addBook"
+		},
 		render : function() {
 			console.log('ListBooks - render');
 			var ltBooks = new BookCollection();
@@ -23,6 +26,10 @@ define([ "underscore", "Backbone", "jquery", "BookCollection", "text!templates/l
 				}
 			});
 			return this;
+		},
+		addBook : function(){
+			console.log('ListBooksView - addBook');
+	    	Backbone.history.navigate('addBook', true); 
 		}
 	});
 	return HomeView;

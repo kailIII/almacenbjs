@@ -2,6 +2,8 @@
 <br/>
 <ul>
 <% _.each(books, function(book){%>
-<li><%= book.attributes.nombre%> - <%= book.attributes.autor%></li>
+<li><%= book.attributes.nombre%> - <%= book.attributes.autor%> - <%= book.attributes.paginas%></li>
 <%});%>
 </ul>
+
+<div id="addBook" style="padding: 2px; border: 1px solid black; width:10%;">Crear Libro</div>
