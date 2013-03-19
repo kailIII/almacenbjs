@@ -1,0 +1,12 @@
+<h1>Editar Libro</h1>
+
+<fieldset>
+<span><label for="nombre">nombre</label><input type="text" id="nombre" value="<%= book.attributes.nombre %>"  /></span><br/>
+<span><label for="autor">autor</label><input type="text" id="autor" value="<%= book.attributes.autor %>" /></span><br/>
+<span><label for="argumento">argumento</label><input type="text" id="argumento" value="<%= book.attributes.argumento %>" /></span><br/>
+<span><label for="paginas">paginas</label><input type="text" id="paginas" value="<%= book.attributes.paginas %>" /></span><br/>
+<button id="btnSave" style="padding: 2px; border: 1px solid black; ">
+    Guardar
+</button>
+</fieldset>
+
