@@ -14,14 +14,7 @@ define([ "underscore", "Backbone", "jquery", "BookModel", "BookCollectionRest",
 		saveBook : function() {
 			console.log('AddBookView - saveBook');
 			var collection = new BookCollection();
-//			var book = new BookModel({
-//				nombre : $("#nombre").val(),
-//				autor : $("#argumento").val(),
-//				argumento : $("#autor").val(),
-//				paginas : $("#paginas").val()
-//			});
 			var book = new BookModel();
-			
 			var atributos = {
 					nombre : $("#nombre").val(),
 					autor : $("#argumento").val(),
@@ -30,7 +23,6 @@ define([ "underscore", "Backbone", "jquery", "BookModel", "BookCollectionRest",
 			};
 
 			console.log('name '+book.attributes.nombre);
-
 			console.log('Vamos a anyadir');
 			collection.add(book);
 			console.log('Vamos a guardar');

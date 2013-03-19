@@ -4,7 +4,8 @@
 <% _.each(books, function(book){%>
 <li>
 	<%= book.attributes.nombre%> - <%= book.attributes.autor%> - <%= book.attributes.paginas%>&nbsp;&nbsp;
-	<button class="btnEditBook" data-idbook="<%= book.attributes.id %>">Ver Detalle</button> 
+	<button class="btnEditBook" data-idbook="<%= book.attributes.id %>">Ver Detalle</button> &nbsp;&nbsp;
+	<button class="btnDeleteBook" data-idbook="<%= book.attributes.id %>">Borrar</button> 
 </li>
 <%});%>
 </ul>
