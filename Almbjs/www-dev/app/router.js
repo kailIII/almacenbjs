@@ -1,16 +1,23 @@
-define([ "Backbone", "AddBookView","HomeView", "ListBooksView" ], function(Backbone, AddBookView, HomeView, ListBooksView) {
+define([ "Backbone", "AddBookView","DetailBookView", "HomeView", "ListBooksView" ], function(Backbone, AddBookView, DetailBookView, HomeView, ListBooksView) {
 	Router = Backbone.Router.extend({
 		routes : {
 			"" : "homeAction",
-			"addBook" : "addBookAction",
-			"listBooks" : "listBooksAction",
-			".*" : "defaultAction",
+			"addBook" : 		"addBookAction",
+			"detail/:idBook/": 	"detailBookction",
+			"listBooks" : 		"listBooksAction",
+			".*" : 				"defaultAction"
 		},
 		addBookAction : function(){
 			console.log('Router - addBookAction');
 			this.addBookView = new AddBookView();
 			console.log('Router - addBookAction - render');
 			return this.addBookView.render();
+		},
+		detailBookction : function (idBook){
+			console.log('detailBookAction');
+			console.log('idBook '+idBook);
+			 this.detailBookView = new DetailBookView({idBook: idBook});
+		     return this.detailBookView.render();
 		},
 		homeAction : function() {
 			console.log('Router - homeAction');

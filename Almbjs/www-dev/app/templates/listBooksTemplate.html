@@ -2,7 +2,10 @@
 <br/>
 <ul>
 <% _.each(books, function(book){%>
-<li><%= book.attributes.nombre%> - <%= book.attributes.autor%> - <%= book.attributes.paginas%></li>
+<li>
+	<%= book.attributes.nombre%> - <%= book.attributes.autor%> - <%= book.attributes.paginas%>&nbsp;&nbsp;
+	<button class="btnEditBook" data-idbook="<%= book.attributes.id %>">Ver Detalle</button> 
+</li>
 <%});%>
 </ul>
 

@@ -4,7 +4,8 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 		el : $("#content"),
 		template : _.template(listBooksTemplate),
 		events: {
-			"click #addBook" : "addBook"
+			"click #addBook" : "addBook",
+			"click .btnEditBook" : "editBook"
 		},
 		render : function() {
 			console.log('ListBooks - render');
@@ -30,6 +31,12 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 		addBook : function(){
 			console.log('ListBooksView - addBook');
 	    	Backbone.history.navigate('addBook', true); 
+		},
+		editBook : function(event){
+			console.log('ListBooksView - editBook');
+//			console.log('idBook: '+$(event.target).data("idBook")); //con idBook falla
+			console.log('idBook: '+$(event.target).data("idbook"));
+			Backbone.history.navigate("/detail/"+$(event.target).data("idbook")+"/",true);
 		}
 	});
 	return HomeView;

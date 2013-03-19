@@ -13,6 +13,7 @@ requirejs.config({
         "BookCollectionRest" : "collections/BookCollectionRest",
         //Views
         "AddBookView" : "views/AddBookView",
+        "DetailBookView" : "views/DetailBookView",
         "HomeView" : "views/HomeView",
         "ListBooksView" : "views/ListBooksView"
     },
