@@ -41,34 +41,17 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 		},
 		deleteBook : function(event){
 			console.log('ListBooksView - deleteBook');
-			var idBook = $(event.target).data("idbook");
-			console.log('idBook: '+idBook);
-			var ltBooks = new BookCollection();
-	    	ltBooks.reset(JSON.parse(sessionStorage.getItem("findBooks")));
-			var book = _.find(ltBooks.models,function(i) {return i.attributes.id==idBook;});
-			console.log('vamos a destruir');
-			book.destroy();
-			console.log('destruido');
-			this.render();
-//			$('<div></div>').appendTo('body')
-//			  .html('<div><h6>Yes or No?</h6></div>')
-//			  .dialog({
-//			      modal: true, title: 'message', zIndex: 10000, autoOpen: true,
-//			      width: 'auto', resizable: false,
-//			      buttons: {
-//			          Yes: function () {
-//			        	  console.log('confirm yes');
-//			              $(this).dialog("close");
-//			          },
-//			          No: function () {
-//			              console.log('confirm no');
-//			              $(this).dialog("close");
-//			          }
-//			      },
-//			      close: function (event, ui) {
-//			          $(this).remove();
-//			      }
-//			});
+			if (confirm('Are you sure to hide')) {
+				var idBook = $(event.target).data("idbook");
+				console.log('idBook: '+idBook);
+				var ltBooks = new BookCollection();
+		    	ltBooks.reset(JSON.parse(sessionStorage.getItem("findBooks")));
+				var book = _.find(ltBooks.models,function(i) {return i.attributes.id==idBook;});
+				console.log('vamos a destruir');
+				book.destroy();
+				console.log('destruido');
+				this.render();
+	        }
 		}
 	});
 	return HomeView;
