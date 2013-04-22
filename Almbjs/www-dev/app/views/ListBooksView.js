@@ -12,6 +12,7 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 			console.log('ListBooks - render');
 			var ltBooks = new BookCollection();
 			var self = this;
+			console.log('ListBooks - render - fetch');
 			ltBooks.fetch({
 				success : function() {
 					console.log('ListBooks - fetch - success');
@@ -27,6 +28,7 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 					console.log('ListBooks - fetch - options '+options);
 				}
 			});
+			console.log('ListBooks - render - end');
 			return this;
 		},
 		addBook : function(){
@@ -35,7 +37,6 @@ define([ "underscore", "Backbone", "jquery", "BookCollectionRest", "text!templat
 		},
 		editBook : function(event){
 			console.log('ListBooksView - editBook');
-//			console.log('idBook: '+$(event.target).data("idBook")); //con idBook falla
 			console.log('idBook: '+$(event.target).data("idbook"));
 			Backbone.history.navigate("/detail/"+$(event.target).data("idbook")+"/",true);
 		},
