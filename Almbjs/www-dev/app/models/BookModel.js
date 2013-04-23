@@ -10,6 +10,8 @@ define(["Backbone"], function(Backbone){
     	                nombre: item.nombre,
     	                autor: item.autor,
     	                argumento: item.argumento,
+    	                serie: item.serie,
+    	                volumen: item.volumen,
     	                paginas: item.paginas
     	            };
     		}else{

@@ -1,13 +1,26 @@
+<link rel="stylesheet" href="./resources/css/table.css">
+<link rel="stylesheet" href="./resources/css/button.css">
 <h1>List Books</h1>
 <br/>
-<ul>
-<% _.each(books, function(book){%>
-<li>
-	<%= book.attributes.nombre%> - <%= book.attributes.autor%> - <%= book.attributes.paginas%>&nbsp;&nbsp;
-	<button class="btnEditBook" data-idbook="<%= book.attributes.id %>">Ver Detalle</button> &nbsp;&nbsp;
-	<button class="btnDeleteBook" data-idbook="<%= book.attributes.id %>">Borrar</button> 
-</li>
-<%});%>
-</ul>
-
-<div id="addBook" style="padding: 2px; border: 1px solid black; width:10%;">Crear Libro</div>
+<div class="CSSTableGenerator" >
+	<table >
+			<tr>
+				<td>Nombre</td>
+				<td>Autor</td>
+				<td>Serie</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<% _.each(books, function(book){ %>
+				<tr>
+					<td><%= book.attributes.nombre%></td>
+					<td><%= book.attributes.autor%></td>
+					<td><%= book.attributes.serie%></td>
+					<td><button class="btnEditBook button" data-idbook="<%= book.attributes.id %>">Ver Detalle</button></td>
+					<td><button class="btnDeleteBook button" data-idbook="<%= book.attributes.id %>">Borrar</button></td>
+				</tr>
+			<%});%>
+	</table>
+</div>
+<br/><br/>
+<div id="addBook" class="button">Crear Libro</div>
